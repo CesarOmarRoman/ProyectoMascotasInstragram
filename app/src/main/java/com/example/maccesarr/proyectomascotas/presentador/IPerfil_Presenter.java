@@ -10,5 +10,5 @@ public interface IPerfil_Presenter {
 
     public void mostrarMascotasBaseDeDatos();
 
-    public void obtenerMedioRecientesOtroUsuario();
+    public void obtenerMedioRecientesOtroUsuario(String perfilID);
 }

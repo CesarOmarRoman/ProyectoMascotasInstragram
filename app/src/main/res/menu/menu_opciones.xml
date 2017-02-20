@@ -19,5 +19,12 @@
         android:orderInCategory="101">
     </item>
 
+    <item
+        android:id="@+id/Usuario"
+        android:title="Recibir Notificación"
+        android:orderInCategory="101">
+    </item>
+
+
 
 </menu>

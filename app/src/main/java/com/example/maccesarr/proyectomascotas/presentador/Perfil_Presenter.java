@@ -37,13 +37,13 @@ public class Perfil_Presenter extends AppCompatActivity implements IPerfil_Prese
     private Activity activity;
 
     //Constructores
-    public Perfil_Presenter(IPerfilFragment_View iPerfilFragment_view, Context context, String correo) {
+    public Perfil_Presenter(IPerfilFragment_View iPerfilFragment_view, Context context, String correo, String perfilID) {
         this.iPerfilFragment_view = iPerfilFragment_view;
 
         if(correo.equals("self")){
             obtenerMedioRecientes();
         }else if(correo.equals("Asdadasdassa")){
-            obtenerMedioRecientesOtroUsuario();
+            obtenerMedioRecientesOtroUsuario(perfilID);
         }
 
     }
@@ -80,11 +80,11 @@ public class Perfil_Presenter extends AppCompatActivity implements IPerfil_Prese
 
     //Métodos
     @Override
-    public void obtenerMedioRecientesOtroUsuario() {
+    public void obtenerMedioRecientesOtroUsuario(String perfilID) {
         RestApiAdapter restApiAdapter = new RestApiAdapter();
         Gson gsonMediaRecent = restApiAdapter.construyendoGsonDeserializadorMediaRecent();
         EndpointsApiID endpointsApi = restApiAdapter.establecerConexionesRestApiInstagramOtroUsuario(gsonMediaRecent);
-        Call<MascotaResponse> mascotaResponseCall= endpointsApi.getRecentMedia();
+        Call<MascotaResponse> mascotaResponseCall= endpointsApi.getRecentMediaById(perfilID);
 
         mascotaResponseCall.enqueue(new Callback<MascotaResponse>() {
             @Override
@@ -102,6 +102,7 @@ public class Perfil_Presenter extends AppCompatActivity implements IPerfil_Prese
             }
         });
     }
+
 
     @Override
     public void mostrarMascotasBaseDeDatos() {

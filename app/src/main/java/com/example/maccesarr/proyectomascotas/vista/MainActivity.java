@@ -77,6 +77,11 @@ public class MainActivity extends AppCompatActivity {
                 finish();
                 startActivity(intent3);
                 break;
+            case R.id.Usuario:
+                Intent intent4= new Intent(this, RetornarID.class);
+                finish();
+                startActivity(intent4);
+                break;
         }
         return true;
     }

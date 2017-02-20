@@ -49,7 +49,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".vista.MainActivity" />
         </activity>
-        <activity android:name=".vista.SeleccionarUsuario"></activity>
+        <activity android:name=".vista.SeleccionarUsuario" />
+        <activity
+            android:name=".vista.RetornarID"
+            android:label="@string/title_activity_retornar_id"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

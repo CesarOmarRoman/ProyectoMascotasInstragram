@@ -53,8 +53,15 @@ public class PerfilFragment extends Fragment implements IPerfilFragment_View {
 
         prefs = this.getActivity().getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
         correo = prefs.getString("cuenta","self");
+        String correo2 = "self";
 
-        presenter = new Perfil_Presenter(this, getContext(), correo);
+        if(correo.equals("self")){
+
+        }else{
+            correo2="4575231153";
+        }
+
+        presenter = new Perfil_Presenter(this, getContext(), correo, correo2);
         return v;
     }
 

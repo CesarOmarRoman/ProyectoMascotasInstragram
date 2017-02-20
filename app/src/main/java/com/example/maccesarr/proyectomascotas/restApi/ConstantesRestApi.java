@@ -21,7 +21,7 @@ public class ConstantesRestApi {
 
 
     public static final String KEY_USER_ID= "4575231153";
-    public static final String KEY_GET_RECENT_MEDIA_USER_ID = "users/"+KEY_USER_ID+"/media/recent/";
+    public static final String KEY_GET_RECENT_MEDIA_USER_ID = "users/{name}/media/recent/";
     public static final String URL_GET_RECENT_MEDIA_USER_ID = KEY_GET_RECENT_MEDIA_USER_ID+KEY_ACCESS_TOKEN+ACCESS_TOKEN;
 
     //://api.instagram.com/v1/users/{user-id}/media/recent/?access_token=ACCESS-TOKEN
